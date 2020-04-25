@@ -1,19 +1,9 @@
-import Vue from "vue";
-import Vuetify, { VBtn, VCard } from "vuetify/lib";
-import { Ripple } from "vuetify/lib/directives";
+import Vue from 'vue'
+import Vuetify from 'vuetify'
+import 'vuetify/dist/vuetify.min.css'
 
-Vue.use(Vuetify, {
-  components: {
-    VBtn,
-    VCard
-  },
-  directives: {
-    Ripple
-  }
-});
+Vue.use(Vuetify)
 
-export default new Vuetify({
-  icons: {
-    iconfont: "mdi"
-  }
-});
+const opts = {}
+
+export default new Vuetify(opts)
