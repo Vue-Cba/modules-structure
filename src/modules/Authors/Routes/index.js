@@ -1,4 +1,12 @@
-import {table} from '@/views'
+import Authors from '../Authors.vue'
+//import TableDirector from '../../../core/builders/table/table.director'
+//import TableBuilder from '../../../core/builders/table/table.builder'
+
+//const AuthorsComponents = {
+//  AuthorTable: new TableDirector(
+//      new TableBuilder
+//  ).authors()
+//}
 
 const AuthorRoute =
 {
@@ -9,18 +17,100 @@ const AuthorRoute =
       es: 'Autores',
     }
   },
-  component: table,
+  component: Authors,
   children: [
-    /*{
+    {
       path: '/',
-      component: ExamEnablerTable,
-      meta: { name: {en: 'Index', es: 'Lista'}, path: 'examenabler', permission: 'READ' }   
+      component: Authors,
+      meta: {
+        name: {en: 'Table', es: 'Tabla'},
+        type: 'table',
+        breadcrumb: [
+          {
+            text: 'Inicio',
+            href: '/',
+            disabled: false
+          },
+          {
+            text: 'Autores',
+            disabled: true
+          },
+        ]
+      }   
     },
     {
-      path: 'update',
-      component: ExamEnablerUpdate,
-      meta: { name: {en: 'Update', es: 'Modificacion'}, path: 'examenabler', permission: 'UPDATE'}
-    },*/
+      path: 'detail/:id',
+      component: Authors,
+      meta: { 
+        name: {en: 'Detail', es: 'Detalle'},
+        type: 'detail',
+        breadcrumb: [
+          {
+            text: 'Inicio',
+            href: '/',
+            disabled: false
+          },
+          {
+            text: 'Autores',
+            href: '/#/authors',
+            disabled: false
+          },
+          {
+            text: 'Detalle',
+            disabled: true
+          },
+        ]
+      }
+    },
+    {
+      path: 'update/:id',
+      component: Authors,
+      meta: { 
+        name: {en: 'Update', es: 'Modificacion'},
+        type: 'update',
+        breadcrumb: [
+          {
+            text: 'Inicio',
+            href: '/',
+            disabled: false
+          },
+          {
+            text: 'Autores',
+            href: '/#/authors',
+            disabled: false
+          },
+          {
+            text: 'Modificación',
+            disabled: true
+          },
+        ]
+      }
+    },
+    {
+      path: 'create',
+      component: Authors,
+      meta: { 
+        name: {en: 'Create', es: 'Creacion'},
+        type: 'create',
+        breadcrumb: [
+          {
+            text: 'Inicio',
+            href: '/',
+            disabled: false
+          },
+          {
+            text: 'Autores',
+            href: '/#/authors',
+            disabled: false
+          },
+          {
+            text: 'Creación',
+            disabled: true
+          },
+        ]
+      }
+    },
+    
   ]
 };
 

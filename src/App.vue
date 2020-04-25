@@ -1,17 +1,13 @@
 <template>
-  <div id="app">
-    <Base/>
-  </div>
+  <v-app>
+    <router-view/>
+  </v-app>
 </template>
 
 <script>
-import Base from "./core/Base";
 
 export default {
   name: "App",
-  components: {
-    Base
-  }
 };
 </script>
 

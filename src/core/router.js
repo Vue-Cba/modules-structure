@@ -9,6 +9,15 @@ const router = new Router({
   routes: [
     {
       path: "/",
+      meta: {
+        breadcrumb: [
+          {
+            text: 'Inicio',
+            href: '/',
+            disabled: true
+          }
+        ]
+      },
       component: Base,
       children: ModulesRouter
     }

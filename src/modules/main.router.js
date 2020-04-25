@@ -1,5 +1,7 @@
+import AuthorsRoutes from "./Authors/Routes"
 
-
-const ModulesRouter = [];
+const ModulesRouter = [
+    AuthorsRoutes
+];
 
 export default ModulesRouter;
