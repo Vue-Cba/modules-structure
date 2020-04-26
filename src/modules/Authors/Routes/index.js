@@ -1,12 +1,7 @@
 import Authors from '../Authors.vue'
-//import TableDirector from '../../../core/builders/table/table.director'
-//import TableBuilder from '../../../core/builders/table/table.builder'
-
-//const AuthorsComponents = {
-//  AuthorTable: new TableDirector(
-//      new TableBuilder
-//  ).authors()
-//}
+import AuthorsTable from '../Views/AuthorsTable'
+import AuthorsCreate from '../Views/AuthorsCreate'
+import AuthorsEdit from '../Views/AuthorsEdit'
 
 const AuthorRoute =
 {
@@ -21,7 +16,7 @@ const AuthorRoute =
   children: [
     {
       path: '/',
-      component: Authors,
+      component: AuthorsTable,
       meta: {
         name: {en: 'Table', es: 'Tabla'},
         type: 'table',
@@ -39,32 +34,8 @@ const AuthorRoute =
       }   
     },
     {
-      path: 'detail/:id',
-      component: Authors,
-      meta: { 
-        name: {en: 'Detail', es: 'Detalle'},
-        type: 'detail',
-        breadcrumb: [
-          {
-            text: 'Inicio',
-            href: '/',
-            disabled: false
-          },
-          {
-            text: 'Autores',
-            href: '/#/authors',
-            disabled: false
-          },
-          {
-            text: 'Detalle',
-            disabled: true
-          },
-        ]
-      }
-    },
-    {
-      path: 'update/:id',
-      component: Authors,
+      path: 'update',
+      component: AuthorsEdit,
       meta: { 
         name: {en: 'Update', es: 'Modificacion'},
         type: 'update',
@@ -88,7 +59,7 @@ const AuthorRoute =
     },
     {
       path: 'create',
-      component: Authors,
+      component: AuthorsCreate,
       meta: { 
         name: {en: 'Create', es: 'Creacion'},
         type: 'create',
