@@ -1,12 +1,21 @@
 import Authors from '../Authors.vue'
-//import TableDirector from '../../../core/builders/table/table.director'
-//import TableBuilder from '../../../core/builders/table/table.builder'
+import TableDirector from '../../../core/builders/table/table.director'
+import TableBuilder from '../../../core/builders/table/table.builder'
 
-//const AuthorsComponents = {
-//  AuthorTable: new TableDirector(
-//      new TableBuilder
-//  ).authors()
-//}
+const AuthorsComponents = {
+  AuthorsTable: new TableDirector(
+    new TableBuilder
+  ).authors(),
+  AuthorsDetail: new TableDirector(
+    new TableBuilder
+  ).authors(),
+  AuthorsUpdate: new TableDirector(
+    new TableBuilder
+  ).authors(),
+  AuthorsCreate: new TableDirector(
+    new TableBuilder
+  ).authors(),
+  }
 
 const AuthorRoute =
 {
@@ -21,7 +30,7 @@ const AuthorRoute =
   children: [
     {
       path: '/',
-      component: Authors,
+      component: AuthorsComponents.AuthorsTable,
       meta: {
         name: {en: 'Table', es: 'Tabla'},
         type: 'table',
@@ -40,7 +49,7 @@ const AuthorRoute =
     },
     {
       path: 'detail/:id',
-      component: Authors,
+      component: AuthorsComponents.AuthorsDetail,
       meta: { 
         name: {en: 'Detail', es: 'Detalle'},
         type: 'detail',
@@ -64,7 +73,7 @@ const AuthorRoute =
     },
     {
       path: 'update/:id',
-      component: Authors,
+      component: AuthorsComponents.AuthorsUpdate,
       meta: { 
         name: {en: 'Update', es: 'Modificacion'},
         type: 'update',
@@ -88,7 +97,7 @@ const AuthorRoute =
     },
     {
       path: 'create',
-      component: Authors,
+      component: AuthorsComponents.AuthorsCreate,
       meta: { 
         name: {en: 'Create', es: 'Creacion'},
         type: 'create',

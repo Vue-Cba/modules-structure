@@ -1,7 +1,5 @@
 <template>
-
     <h1 v-if="showActions">Está vivo!!</h1>
-    
 </template>
 
 <script>
